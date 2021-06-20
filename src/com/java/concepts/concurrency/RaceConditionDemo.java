@@ -30,7 +30,17 @@ class BankAccount implements Runnable{
         }
     }
 
-    private void makeWithdrawel(int amount) {
+    /*
+    * Two ways to synchronize
+    * 1. use keyword
+    * 2. synchronized(Object){
+    * // vulnerable code}
+    *
+    * Synchronized creates a lock on an object and the code inside synchronized method
+    * is not shared by any other thread except one.
+    *
+    * On same instance variable we should not create more than one lock */
+    synchronized private void makeWithdrawel(int amount) {
         if(amount>balance){
             System.out.println("Not enough balance");
         }else{
