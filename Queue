@@ -2,8 +2,11 @@
 //Operations: enqueue, dequeue, peek, size, isEmpty
 class ApniQueue{
 
-    private List<Integer> list = new LinkedList<>(); //Choose LinkedList and not ArrayList
+    private List<Integer> list;  //Choose LinkedList and not ArrayList
     
+    public ApniQueue(){
+        list = new LinkedList<>();
+    }
     public int add(int elem){
         list.add(elem);
         return elem;
