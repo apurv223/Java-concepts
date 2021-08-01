@@ -1,0 +1,41 @@
+//Stack Implementaion Self
+//Operations: push, pop, peek, size, isEmpty
+
+class ApniStack{
+    private List<Integer> list;
+
+    public ApniStack(){
+        list = new ArrayList<>();
+    }
+
+    public void push(int elem){
+        list.add(elem);
+    }
+
+    public int pop(){
+        if(getSize()==0){ throw Exception("Empty stack exception");}
+        return list.remove(getSize()-1);
+    }
+
+    public int peek(){
+        return list.get(getSize()-1);
+    }
+
+    public boolean isEmpty(){
+        return getSize()==0?true:false;
+    }
+
+    private int getSize(){
+        return list.size();
+    }
+}
+
+//Java Stack
+Stack --> Vector --> List interface --> Collection interface --> Iterable interface
+
+//Sample code
+Stack<E> stack = new Stack<E>();
+stack.push(123);
+stack.peek();
+stack.pop();
+stack.isEmpty();
