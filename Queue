@@ -1,0 +1,62 @@
+//Queue Implementaion Self
+//Operations: enqueue, dequeue, peek, size, isEmpty
+class ApniQueue{
+
+    private List<Integer> list = new LinkedList<>(); //Choose LinkedList and not ArrayList
+    
+    public int add(int elem){
+        list.add(elem);
+        return elem;
+    }
+
+    public int remove() throws Exception{
+        if(getSize()==0){
+            throw new Exception("Queue empty already!");
+        }
+        int delElem = list.remove(0);
+        return delElem;
+    }
+
+    public int peek() throws Exception{
+        if(getSize() == 0){throw new Exception("Queue empty already!");}
+        return list.get(0);
+    }
+
+    int getSize(){
+        return list.size();
+    }
+}
+
+//Java Queue
+---------------------------------
+Collection
+^
+|
+Queue interface <--PriorityQueue 
+^
+|
+|extends
+|
+Deque interface
+|           |
+|           |
+LinkedList  ArrayDeque
+---------------------------------
+//Sample code
+Queue<Integer> q = new LinkedList<>();
+q.add(232);
+q.size();
+boolean b = q.isEmpty();
+int n = q.peek();
+q.remove();
+Queue<String> pq = new PriorityQueue<>();
+
+//Traverse Q
+Iterator iterator = pq.iterator();
+while (iterator.hasNext()) {
+    System.out.print(iterator.next() + " ");
+}
+
+Queue<String> pqReverseOrder = new PriorityQueue<>(Collections.reverseOrder());
+Queue<String> pqUsingLambda = new PriorityQueue<>((x, y) -> Integer.compare(x, y));
+
